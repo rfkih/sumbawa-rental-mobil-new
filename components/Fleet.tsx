@@ -2,7 +2,7 @@ import { fleets, FleetItem } from "../data/fleets";
 
 export default function Fleet(): JSX.Element {
   const whatsapp = "6282340715003";
-  const link = `https://wa.me/${whatsapp}?text=Halo%20Sewa%20Mobil%20Sekongkang,%20saya%20ingin%20memesan%20mobil.`;
+  const link = `https://wa.me/${whatsapp}?text=Halo,%20Saya%20Ingin%20menyewa%20mobil.`;
 
   return (
     <section id="armada" className="py-24 bg-secondary-gray">

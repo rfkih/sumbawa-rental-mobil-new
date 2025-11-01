@@ -16,6 +16,9 @@ export const metadata = {
     "rental innova sumbawa",
     "rental avanza sumbawa",
     "rental hilux sumbawa",
+    "rental innova sekongkang",
+    "rental avanza sekongkang",
+    "rental hilux sekongkang",
     "rental mobil bulanan sumbawa",
     "rental mobil harian sumbawa",
     "rental mobil di sekongkang"
