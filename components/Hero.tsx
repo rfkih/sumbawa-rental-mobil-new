@@ -22,7 +22,7 @@ const Hero = () => {
           </h1>
     
           <p className="hero__subtitle">
-            Layanan rental mobil Sekongkang untuk kebutuhan pribadi, perjalanan bisnis, maupun operasional perusahaan Anda.
+            Layanan rental mobil di Sumbawa Barat untuk kebutuhan pribadi, perjalanan bisnis, maupun operasional perusahaan Anda.
           </p>
     
           <CustomButton
