@@ -31,7 +31,7 @@ export const metadata = {
     siteName: "Sumbawa Rental Mobil",
     images: [
       {
-        url: "/hilux2.png",
+        url: "/hilux.png",
         width: 1200,
         height: 630,
         alt: "Toyota Hilux putih - Sumbawa Rental Mobil",
