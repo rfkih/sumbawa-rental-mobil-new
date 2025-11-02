@@ -70,7 +70,7 @@ const Footer = () => (
             <div className="flex-1 min-w-[250px]">
               <div className="w-full h-[200px] md:h-[180px] rounded-xl overflow-hidden shadow-md border border-gray-200">
                 <iframe
-                  title="Lokasi Sumbawa Rental Mobil Sekongkang Bawah"
+                  title="Lokasi Nuansa Rinjani Rental Sekongkang Bawah"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.7082891853524!2d116.72303167588809!3d-8.45101808773645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdb31b23e034e3%3A0x92781e344f43f0e!2sSekongkang%20Bawah%2C%20Kabupaten%20Sumbawa%20Barat%2C%20Nusa%20Tenggara%20Bar.!5e0!3m2!1sid!2sid!4v1698912345678!5m2!1sid!2sid"
                   width="100%"
                   height="100%"
@@ -86,7 +86,7 @@ const Footer = () => (
 
       {/* ===== BOTTOM BAR ===== */}
       <div className="flex justify-between items-center flex-wrap border-t border-gray-100 sm:px-16 px-6 py-6 text-sm text-gray-500">
-        <p>© {new Date().getFullYear()} Sumbawa Rental Mobil. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Nuansa Rinjani Rental. All rights reserved.</p>
         <div className="flex gap-5">
           <Link href="/" className="hover:text-primary-blue">
             Privacy Policy

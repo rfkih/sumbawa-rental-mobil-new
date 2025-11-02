@@ -3,7 +3,7 @@ import "./globals.css";
 import { Footer, NavBar } from "@components";
 
 export const metadata = {
-  title: "Sumbawa Rental Mobil",
+  title: "Nuansa Rinjani Rental",
   description: "Discover world's best car showcase application",
 };
 

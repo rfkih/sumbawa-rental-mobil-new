@@ -22,10 +22,10 @@ const AboutSection = () => {
       {/* Right: Text */}
       <div className="flex-1 space-y-6">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-          Tentang <span className="text-primary-blue">Sumbawa Rental Mobil</span>
+          Tentang <span className="text-primary-blue">Nuansa Rinjani Rental</span>
         </h2>
         <p className="text-gray-700 leading-relaxed text-justify">
-          <strong>Sumbawa Rental Mobil</strong> adalah platform penyewaan mobil modern yang
+          <strong>Nuansa Rinjani Rental</strong> adalah platform penyewaan mobil modern yang
           memudahkan Anda menemukan kendaraan terbaik untuk setiap kebutuhan —
           mulai dari perjalanan pribadi, bisnis, hingga liburan keluarga.
           Kami berkomitmen menghadirkan layanan cepat, aman, dan terpercaya
@@ -33,7 +33,7 @@ const AboutSection = () => {
         </p>
         <p className="text-gray-700 leading-relaxed text-justify">
           Sistem penyewaan kami fleksibel dan dapat disesuaikan dengan kebutuhan
-          Anda. Sumbawa Rental Mobil menyediakan opsi penyewaan:
+          Anda. Nuansa Rinjani Rental menyediakan opsi penyewaan:
         </p>
 
         <ul className="list-disc list-inside text-gray-700 space-y-2">

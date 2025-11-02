@@ -5,7 +5,7 @@ import Script from "next/script";
 
 export const metadata = {
   metadataBase: new URL("https://sumbawa-rental-mobil.vercel.app"),
-  title: "Sumbawa Rental Mobil | Sewa Mobil Sumbawa Barat",
+  title: "Nuansa Rinjani Rental | Sewa Mobil Sumbawa Barat",
   description:
     "Sewa mobil di Sumbawa Barat dengan mudah, cepat, dan terpercaya. Layanan harian, mingguan, dan bulanan untuk kebutuhan pribadi, bisnis, dan perusahaan.",
   keywords: [
@@ -24,17 +24,17 @@ export const metadata = {
     "rental mobil di sekongkang"
   ],
   openGraph: {
-    title: "Sumbawa Rental Mobil",
+    title: "Nuansa Rinjani Rental",
     description:
       "Layanan rental mobil di Sumbawa Barat untuk kebutuhan pribadi, bisnis, dan operasional perusahaan Anda.",
     url: "https://sumbawa-rental-mobil.vercel.app",
-    siteName: "Sumbawa Rental Mobil",
+    siteName: "Nuansa Rinjani Rental",
     images: [
       {
         url: "/hilux.png",
         width: 1200,
         height: 630,
-        alt: "Toyota Hilux putih - Sumbawa Rental Mobil",
+        alt: "Toyota Hilux putih - Nuansa Rinjani Rental",
       },
     ],
     locale: "id_ID",
@@ -71,7 +71,7 @@ export default async function Home({ searchParams }: HomeProps) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CarRental",
-            name: "Sumbawa Rental Mobil",
+            name: "Nuansa Rinjani Rental",
             image: "https://sumbawa-rental-mobil.vercel.app/hilux2.png",
             description:
               "Sewa mobil di Sumbawa Barat dengan mudah, cepat, dan terpercaya. Tersedia layanan harian, mingguan, dan bulanan.",

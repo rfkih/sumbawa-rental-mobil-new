@@ -22,7 +22,7 @@ const Hero = () => {
           </h1>
     
           <p className="hero__subtitle">
-            Sumbawa Rental Mobil menyediakan layanan sewa mobil di Sumbawa Barat untuk kebutuhan pribadi
+            Nuansa Rinjani Rental menyediakan layanan sewa mobil di Sumbawa Barat untuk kebutuhan pribadi
             , perjalanan bisnis, dan operasional perusahaan dengan harga kompetitif.
           </p>
     
