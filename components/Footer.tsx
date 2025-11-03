@@ -71,15 +71,17 @@ const Footer = () => (
               <div className="w-full h-[200px] md:h-[180px] rounded-xl overflow-hidden shadow-md border border-gray-200">
                 <iframe
                   title="Lokasi Nuansa Rinjani Rental Sekongkang Bawah"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.7082891853524!2d116.72303167588809!3d-8.45101808773645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdb31b23e034e3%3A0x92781e344f43f0e!2sSekongkang%20Bawah%2C%20Kabupaten%20Sumbawa%20Barat%2C%20Nusa%20Tenggara%20Bar.!5e0!3m2!1sid!2sid!4v1698912345678!5m2!1sid!2sid"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.0723920403298!2d116.7518609!3d-8.9654771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dccf3cced3286ed%3A0x429ebeb325350a2a!2sNuansa%20Rinjani%20Rental!5e0!3m2!1sid!2sid!4v1762065484840!5m2!1sid!2sid"
                   width="100%"
                   height="100%"
                   loading="lazy"
                   allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
                   className="border-0"
                 ></iframe>
               </div>
             </div>
+
           </div>
         </div>
       </div>

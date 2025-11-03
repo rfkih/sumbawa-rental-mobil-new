@@ -4,7 +4,7 @@ import Script from "next/script";
 
 
 export const metadata = {
-  metadataBase: new URL("https://sumbawa-rental-mobil.vercel.app"),
+  metadataBase: new URL("http://www.nuansarinjanirental.com/"),
   title: "Nuansa Rinjani Rental | Sewa Mobil Sumbawa Barat",
   description:
     "Sewa mobil di Sumbawa Barat dengan mudah, cepat, dan terpercaya. Layanan harian, mingguan, dan bulanan untuk kebutuhan pribadi, bisnis, dan perusahaan.",
@@ -27,7 +27,7 @@ export const metadata = {
     title: "Nuansa Rinjani Rental",
     description:
       "Layanan rental mobil di Sumbawa Barat untuk kebutuhan pribadi, bisnis, dan operasional perusahaan Anda.",
-    url: "https://sumbawa-rental-mobil.vercel.app",
+    url: "http://www.nuansarinjanirental.com/",
     siteName: "Nuansa Rinjani Rental",
     images: [
       {
@@ -48,7 +48,6 @@ export default async function Home({ searchParams }: HomeProps) {
   return (
     <main className='overflow-hidden'>
       <Hero />
-
       <div className='mt-12 padding-x padding-y max-width' id='discover'>
         <div className='home__text-container'>
           <h1 className='text-4xl font-extrabold'>Katalog Mobil</h1>
@@ -72,7 +71,7 @@ export default async function Home({ searchParams }: HomeProps) {
             "@context": "https://schema.org",
             "@type": "CarRental",
             name: "Nuansa Rinjani Rental",
-            image: "https://sumbawa-rental-mobil.vercel.app/hilux2.png",
+            image: "http://www.nuansarinjanirental.com/hilux2.png",
             description:
               "Sewa mobil di Sumbawa Barat dengan mudah, cepat, dan terpercaya. Tersedia layanan harian, mingguan, dan bulanan.",
             address: {
@@ -84,7 +83,7 @@ export default async function Home({ searchParams }: HomeProps) {
               addressCountry: "ID",
             },
             telephone: "+62 812-3456-7890",
-            url: "https://sumbawa-rental-mobil.vercel.app",
+            url: "http://www.nuansarinjanirental.com/",
             priceRange: "Rp350.000 - Rp1.000.000 per hari",
           }),
         }}
