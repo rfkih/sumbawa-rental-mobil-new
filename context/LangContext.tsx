@@ -126,7 +126,7 @@ const translations = {
           name: "Toyota Avanza",
           sub: "Tipe G Manual 4×2 1.5L",
           chip: "MPV · Hemat BBM",
-          price: "Rp450.000",
+          price: "Rp500.000",
           seats: "7",
           trans: "Manual",
           fuel: "Bensin",
@@ -157,7 +157,7 @@ const translations = {
           id: "harian",
           label: "Harian",
           desc: "Cocok untuk perjalanan singkat atau kebutuhan mendadak.",
-          price: "Rp450.000",
+          price: "Rp500.000",
           unit: "/ hari",
           items: [
             "Minimum 1 hari",
@@ -186,7 +186,7 @@ const translations = {
           id: "bulanan",
           label: "Bulanan",
           desc: "Solusi efisien untuk operasional perusahaan atau jangka panjang.",
-          price: "Rp450.000",
+          price: "Rp400.000",
           unit: "/ hari",
           items: [
             "Minimum 30 hari",
