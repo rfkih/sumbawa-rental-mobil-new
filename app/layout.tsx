@@ -9,16 +9,16 @@ const SITE_URL = "https://www.nuansarinjanirental.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Nuansa Rinjani Rental | Sewa Mobil Sumbawa Barat",
+    default: "Nuansa Rinjani Rental | Sewa Mobil Sumbawa Barat · Car Rental West Sumbawa",
     template: "%s | Nuansa Rinjani Rental",
   },
   description:
-    "Sewa mobil di Sumbawa Barat dengan mudah, cepat, dan terpercaya. Layanan harian, mingguan, dan bulanan untuk kebutuhan pribadi, bisnis, dan perusahaan. Berbasis di Sekongkang.",
+    "Sewa mobil di Sumbawa Barat — harian, mingguan, bulanan. Armada Toyota Hilux, Innova, Avanza siap antar-jemput. Car rental in West Sumbawa, Indonesia — daily, weekly, monthly hire.",
   keywords: [
+    // Indonesian
     "rental mobil sumbawa barat",
     "sewa mobil sekongkang",
     "rental mobil di sumbawa",
-    "car hire sumbawa",
     "rental innova sumbawa",
     "rental avanza sumbawa",
     "rental hilux sumbawa",
@@ -30,17 +30,34 @@ export const metadata: Metadata = {
     "sewa mobil lakey",
     "sewa mobil tambora",
     "rental kru tambang batu hijau",
+    // English
+    "car rental west sumbawa",
+    "car hire sumbawa indonesia",
+    "car rental sekongkang",
+    "hilux rental sumbawa",
+    "innova rental sumbawa",
+    "avanza rental sumbawa",
+    "car rental lakey beach",
+    "car rental tambora",
+    "4x4 rental sumbawa",
+    "batu hijau mine transport",
+    "west sumbawa car hire",
   ],
   authors: [{ name: "Nuansa Rinjani Rental" }],
   creator: "Nuansa Rinjani Rental",
   publisher: "Nuansa Rinjani Rental",
   alternates: {
     canonical: SITE_URL,
+    languages: {
+      "id": SITE_URL,
+      "en": SITE_URL,
+      "x-default": SITE_URL,
+    },
   },
   openGraph: {
-    title: "Nuansa Rinjani Rental | Sewa Mobil Sumbawa Barat",
+    title: "Nuansa Rinjani Rental | Sewa Mobil · Car Rental Sumbawa Barat",
     description:
-      "Layanan sewa mobil di Sumbawa Barat — Toyota Hilux, Innova, Avanza. Harian, mingguan, bulanan. Pesan via WhatsApp, siap antar-jemput.",
+      "Sewa mobil / Car rental in West Sumbawa, Indonesia — Toyota Hilux, Innova, Avanza. Harian · Mingguan · Bulanan / Daily · Weekly · Monthly. WhatsApp 24/7.",
     url: SITE_URL,
     siteName: "Nuansa Rinjani Rental",
     images: [
@@ -48,17 +65,18 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/hilux2.png`,
         width: 1200,
         height: 630,
-        alt: "Nuansa Rinjani Rental — Sewa Mobil Sumbawa Barat",
+        alt: "Nuansa Rinjani Rental — Sewa Mobil Sumbawa Barat / Car Rental West Sumbawa",
       },
     ],
     locale: "id_ID",
+    alternateLocale: ["en_US"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nuansa Rinjani Rental | Sewa Mobil Sumbawa Barat",
+    title: "Nuansa Rinjani Rental | Car Rental · Sewa Mobil Sumbawa",
     description:
-      "Sewa mobil di Sumbawa Barat — Hilux, Innova, Avanza. Harian, mingguan, bulanan. WhatsApp 24/7.",
+      "Car rental / Sewa mobil Sumbawa Barat — Hilux, Innova, Avanza. Daily · Weekly · Monthly / Harian · Mingguan · Bulanan. WhatsApp 24/7.",
     images: [`${SITE_URL}/hilux2.png`],
   },
   robots: {
@@ -85,6 +103,7 @@ const organizationSchema = {
   logo: `${SITE_URL}/logo.png`,
   telephone: "+62-823-4071-5003",
   email: "sumbawarentalmobil@gmail.com",
+  inLanguage: ["id", "en"],
   address: {
     "@type": "PostalAddress",
     streetAddress: "Jl. Lintas Sekongkang Bawah",
@@ -105,7 +124,8 @@ const localBusinessSchema = {
   name: "Nuansa Rinjani Rental",
   image: `${SITE_URL}/hilux2.png`,
   description:
-    "Penyedia jasa sewa mobil di Sumbawa Barat untuk kebutuhan pribadi, bisnis, dan operasional perusahaan. Tersedia Toyota Hilux, Innova, dan Avanza.",
+    "Penyedia jasa sewa mobil di Sumbawa Barat — Toyota Hilux, Innova, Avanza. Car rental service in West Sumbawa, Indonesia for personal, business, and corporate needs.",
+  inLanguage: ["id", "en"],
   url: SITE_URL,
   telephone: "+62-823-4071-5003",
   email: "sumbawarentalmobil@gmail.com",
