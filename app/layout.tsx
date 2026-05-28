@@ -129,7 +129,7 @@ const localBusinessSchema = {
   url: SITE_URL,
   telephone: "+62-823-4071-5003",
   email: "sumbawarentalmobil@gmail.com",
-  priceRange: "Rp350.000 - Rp750.000",
+  priceRange: "Rp450.000 - Rp850.000",
   currenciesAccepted: "IDR",
   paymentAccepted: "Cash, Transfer Bank",
   address: {
