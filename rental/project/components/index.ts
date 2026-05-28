@@ -6,10 +6,7 @@ import NavBar from "./Navbar";
 import ShowMore from "./ShowMore";
 import Hero from "./Hero";
 import Fleet from "./Fleet";
-import AboutSections from "./AboutSections";
-import CaraSewa from "./CaraSewa";
-import Layanan from "./Layanan";
-import WhatsAppFAB from "./WhatsAppFAB";
+import AboutSections from "./AboutSections"
 
 export {
   Hero,
@@ -21,7 +18,4 @@ export {
   ShowMore,
   Fleet,
   AboutSections,
-  CaraSewa,
-  Layanan,
-  WhatsAppFAB,
 };

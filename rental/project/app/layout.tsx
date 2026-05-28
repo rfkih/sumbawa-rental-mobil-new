@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <head>
-        {/* Organization schema for Google logo */}
+        {/* ✅ Organization schema for Google to pick up your logo */}
         <Script
           id="organization-schema"
           type="application/ld+json"
@@ -40,10 +40,13 @@ export default function RootLayout({
             }),
           }}
         />
+
+        {/* ✅ Favicon links */}
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body className="relative text-ink font-sans antialiased">
+
+      <body className="relative">
         <NavBar />
         {children}
         <Footer />

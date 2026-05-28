@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(curl -L \"https://api.anthropic.com/v1/design/h/EBgnmt9lDqIdjgVzpba35w\" -o design.tar.gz)",
+      "Bash(tar -tzf design.tar.gz)",
+      "Bash(tar -xzf design.tar.gz)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}

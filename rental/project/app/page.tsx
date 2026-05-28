@@ -1,5 +1,7 @@
-import { Hero, CaraSewa, Fleet, Layanan, AboutSections, WhatsAppFAB } from "@components";
+import { HomeProps } from "@types";
+import { AboutSections, Hero, Fleet } from "@components";
 import Script from "next/script";
+
 
 export const metadata = {
   metadataBase: new URL("http://www.nuansarinjanirental.com/"),
@@ -19,7 +21,7 @@ export const metadata = {
     "rental hilux sekongkang",
     "rental mobil bulanan sumbawa",
     "rental mobil harian sumbawa",
-    "rental mobil di sekongkang",
+    "rental mobil di sekongkang"
   ],
   openGraph: {
     title: "Nuansa Rinjani Rental",
@@ -40,15 +42,26 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home({ searchParams }: HomeProps) {
+
+
   return (
-    <main className="overflow-hidden">
+    <main className='overflow-hidden'>
       <Hero />
-      <CaraSewa />
-      <Fleet />
-      <Layanan />
-      <AboutSections />
-      <WhatsAppFAB />
+      <div className='mt-12 padding-x padding-y max-width' id='discover'>
+        <div className='home__text-container'>
+          <h1 className='text-4xl font-extrabold'>Katalog Mobil</h1>
+          <p>Temukan mobil yang Anda inginkan di sini!</p>
+        </div>
+        <section>
+          <div>
+            <Fleet/>
+          </div>
+          <div>
+            <AboutSections/>
+          </div>
+        </section>
+      </div>
       <Script
         id="car-rental-schema"
         type="application/ld+json"
@@ -69,9 +82,9 @@ export default function Home() {
               postalCode: "84457",
               addressCountry: "ID",
             },
-            telephone: "+62-823-4071-5003",
+            telephone: "+62 812-3456-7890",
             url: "http://www.nuansarinjanirental.com/",
-            priceRange: "Rp450.000 - Rp750.000 per hari",
+            priceRange: "Rp450.000 - Rp1.000.000 per hari",
           }),
         }}
       />

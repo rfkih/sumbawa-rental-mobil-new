@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nuansa Rinjani Rental — Mobile Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; min-height: 100vh; background: #F2F2F0; font-family: 'Manrope', sans-serif; color: #1B1D24; }
+  .stage {
+    min-height: 100vh;
+    padding: 48px 24px 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+  .header { max-width: 720px; text-align: center; }
+  .eyebrow {
+    display: inline-flex; gap: 8px; align-items: center;
+    color: #2B59FF; font-size: 11px; font-weight: 800;
+    letter-spacing: 0.16em; text-transform: uppercase;
+  }
+  .eyebrow::before { content:''; width: 22px; height: 1px; background:#2B59FF; }
+  .title {
+    margin: 12px 0 6px;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800; letter-spacing: -0.025em; line-height: 1.05;
+    color: #1B1D24;
+  }
+  .subtitle { color: #5B616E; font-size: 16px; max-width: 540px; margin: 0 auto; line-height: 1.55; }
+  .row { display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+
+  .device-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .device-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #5B616E; background: white; padding: 6px 12px; border-radius: 999px;
+    border: 1px solid rgba(43,44,53,0.10);
+  }
+  .open-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #2B59FF; color: white; font-size: 13px; font-weight: 700;
+    padding: 10px 16px; border-radius: 12px; text-decoration: none;
+    box-shadow: 0 10px 24px -10px rgba(43,89,255,0.40);
+    transition: transform 120ms ease;
+  }
+  .open-btn:hover { transform: translateY(-1px); }
+
+  /* phone tweaks */
+  .phone {
+    width: 402px; height: 868px;
+    border-radius: 56px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    box-shadow: 0 30px 90px -20px rgba(0,0,0,0.32), 0 0 0 12px #1B1D24, 0 0 0 13px rgba(0,0,0,0.4);
+  }
+  .phone-screen { position: absolute; inset: 0; background: white; overflow: hidden; }
+  .phone iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+  /* Dynamic island */
+  .phone::before {
+    content: ''; position: absolute; top: 11px; left: 50%;
+    transform: translateX(-50%);
+    width: 126px; height: 36px; border-radius: 22px;
+    background: #000; z-index: 5; pointer-events: none;
+  }
+  /* Home indicator */
+  .phone::after {
+    content: ''; position: absolute; bottom: 8px; left: 50%;
+    transform: translateX(-50%);
+    width: 134px; height: 5px; border-radius: 100px;
+    background: rgba(255,255,255,0.85); z-index: 5; pointer-events: none;
+    mix-blend-mode: difference;
+  }
+
+  /* Tablet device */
+  .tablet {
+    width: 540px; height: 720px;
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    box-shadow: 0 30px 90px -20px rgba(0,0,0,0.32), 0 0 0 10px #2A2B33;
+  }
+  .tablet iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+
+  /* Scale-down for narrow screens */
+  @media (max-width: 900px) {
+    .phone { transform: scale(0.85); transform-origin: top center; margin-bottom: -130px; }
+    .tablet { display: none; }
+  }
+  @media (max-width: 480px) {
+    .phone { transform: scale(0.7); margin-bottom: -260px; }
+  }
+
+  .hint {
+    margin-top: 6px; font-size: 12px; color: #747A88; max-width: 360px; text-align: center; line-height: 1.5;
+  }
+  .hint code { background: #fff; border: 1px solid rgba(43,44,53,0.10); padding: 2px 6px; border-radius: 6px; color: #2B2C35; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="header">
+    <div class="eyebrow">Mobile Preview</div>
+    <h1 class="title">Nuansa Rinjani Rental on iPhone</h1>
+    <p class="subtitle">
+      The actual <code style="background:#fff;border:1px solid rgba(0,0,0,0.08);padding:2px 6px;border-radius:6px;font-family:ui-monospace,monospace;font-size:13px;">index.html</code> running inside a 402px iPhone frame.
+      Scroll the phone screen to explore. Tap anywhere just like on a real device — the hamburger menu, the WhatsApp FAB, language toggle, and modal are all live.
+    </p>
+    <p style="margin-top:14px;">
+      <a class="open-btn" href="index.html" target="_blank">
+        Open full-size in a new tab
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="device-wrap">
+      <span class="device-label">iPhone · 402 × 868</span>
+      <div class="phone">
+        <div class="phone-screen">
+          <iframe src="index.html" title="Mobile preview" loading="eager"></iframe>
+        </div>
+      </div>
+      <p class="hint">Live & interactive. Tap the <strong>☰</strong> in the navbar to open the mobile drawer.</p>
+    </div>
+
+    <div class="device-wrap">
+      <span class="device-label">Tablet · 540 × 720</span>
+      <div class="tablet">
+        <iframe src="index.html" title="Tablet preview" loading="eager"></iframe>
+      </div>
+      <p class="hint">Mid-size view — same layout, two-column grid kicks in around 768px.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

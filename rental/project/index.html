@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nuansa Rinjani Rental — Sewa Mobil Sumbawa Barat</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Manrope', 'sans-serif'] },
+        colors: {
+          'ink':        '#1B1D24',
+          'ink-2':      '#2B2C35',
+          'muted':      '#5B616E',
+          'grey':       '#747A88',
+          'line':       'rgba(43,44,53,0.10)',
+          'line-soft':  'rgba(43,44,53,0.06)',
+          'brand':      '#2B59FF',
+          'brand-700':  '#1E47D9',
+          'brand-50':   '#F2F5FF',
+          'brand-100':  '#F5F8FF',
+          'wa':         '#22A05C',
+          'wa-700':     '#1A8049',
+          'cream':      '#FAFAF7',
+        },
+        boxShadow: {
+          'soft':  '0 1px 2px rgba(20,22,35,0.04), 0 8px 24px -12px rgba(20,22,35,0.08)',
+          'lift':  '0 10px 30px -10px rgba(43,89,255,0.20), 0 2px 6px rgba(20,22,35,0.05)',
+          'card':  '0 1px 0 rgba(43,44,53,0.04), 0 12px 28px -16px rgba(43,44,53,0.18)',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #FFFFFF; color: #1B1D24; font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
+
+  /* Hero pentagon shape — mirrors existing /hero-bg.png signature */
+  .hero-pentagon {
+    position: absolute;
+    inset: -2rem -10rem -2rem auto;
+    width: 62%;
+    background: #2B59FF;
+    clip-path: polygon(20% 0%, 100% 8%, 100% 92%, 4% 100%, 0% 60%);
+    border-radius: 28px;
+    z-index: 0;
+  }
+  @media (max-width: 1024px) {
+    .hero-pentagon { inset: auto -6rem -2rem -6rem; width: calc(100% + 12rem); height: 480px; }
+  }
+
+  /* Subtle dot grid behind sections */
+  .dot-grid {
+    background-image: radial-gradient(rgba(43,44,53,0.10) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* Spec chip */
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 10px; border-radius: 999px;
+    background: #F5F8FF; color: #2B59FF;
+    font-size: 12px; font-weight: 600;
+    border: 1px solid rgba(43,89,255,0.10);
+  }
+
+  /* Animated underline for nav */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ''; position: absolute; left: 0; bottom: -6px;
+    height: 2px; width: 0; background: #2B59FF; transition: width 200ms ease;
+  }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+  /* Car card hover */
+  .car-card { transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 240ms ease, border-color 240ms ease; }
+  .car-card:hover { transform: translateY(-4px); }
+  .car-card .car-img { transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .car-card:hover .car-img { transform: scale(1.04) translateY(-2px); }
+
+  /* CTA bounce */
+  .btn-primary { transition: transform 120ms ease, box-shadow 200ms ease, background 200ms ease; }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -12px rgba(43,89,255,0.45); }
+  .btn-primary:active { transform: translateY(0); }
+
+  /* WhatsApp FAB pulse */
+  @keyframes wa-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(34,160,92,0.5); }
+    70%  { box-shadow: 0 0 0 18px rgba(34,160,92,0); }
+    100% { box-shadow: 0 0 0 0 rgba(34,160,92,0); }
+  }
+  .wa-fab { animation: wa-pulse 2.2s ease-out infinite; }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 600ms ease, transform 600ms cubic-bezier(0.2,0.8,0.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* Section eyebrow */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #2B59FF;
+  }
+  .eyebrow::before {
+    content: ''; width: 28px; height: 1px; background: #2B59FF;
+  }
+
+  /* Scroll padding for sticky nav anchor offset */
+  html { scroll-padding-top: 88px; }
+
+  /* Smaller helper */
+  .num-tabular { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body class="bg-white text-ink">
+
+<!-- ========================== NAVBAR ========================== -->
+<header class="fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-3">
+    <nav class="flex items-center justify-between bg-white/85 backdrop-blur-xl border border-line-soft shadow-soft rounded-2xl pl-4 pr-2 py-2">
+      <!-- Logo -->
+      <a href="#beranda" class="flex items-center shrink-0">
+        <img src="public/logo.png" alt="Nuansa Rinjani Rental" class="h-9 w-auto object-contain" />
+      </a>
+
+      <!-- Nav -->
+      <div class="hidden md:flex items-center gap-9 text-sm font-semibold text-ink-2">
+        <a href="#beranda"  class="nav-link active" data-i18n="nav.beranda">Beranda</a>
+        <a href="#armada"   class="nav-link" data-i18n="nav.armada">Armada</a>
+        <a href="#layanan"  class="nav-link" data-i18n="nav.layanan">Layanan</a>
+        <a href="#tentang"  class="nav-link" data-i18n="nav.tentang">Tentang</a>
+        <a href="#kontak"   class="nav-link" data-i18n="nav.kontak">Kontak</a>
+      </div>
+
+      <!-- Right side -->
+      <div class="flex items-center gap-2">
+        <!-- Language toggle -->
+        <div class="hidden sm:flex items-center bg-cream rounded-full p-1 border border-line-soft" role="group" aria-label="Language">
+          <button id="lang-id" class="lang-btn px-3 py-1.5 rounded-full text-xs font-extrabold tracking-wide transition" data-lang="id">ID</button>
+          <button id="lang-en" class="lang-btn px-3 py-1.5 rounded-full text-xs font-extrabold tracking-wide transition" data-lang="en">EN</button>
+        </div>
+        <!-- Mobile language toggle -->
+        <button id="lang-mobile" class="sm:hidden w-9 h-9 rounded-full bg-cream border border-line-soft flex items-center justify-center text-xs font-extrabold text-ink-2" aria-label="Toggle language">ID</button>
+
+        <a href="tel:+6282340715003" class="hidden lg:inline-flex items-center gap-2 text-sm font-semibold text-ink-2 hover:text-brand px-3 py-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="num-tabular">+62 823-4071-5003</span>
+        </a>
+        <a href="https://wa.me/6282340715003?text=Halo,%20Saya%20Ingin%20menyewa%20mobil." target="_blank" rel="noopener noreferrer"
+           class="btn-primary hidden md:inline-flex items-center gap-2 bg-brand hover:bg-brand-700 text-white text-sm font-bold rounded-xl px-4 py-2.5 shadow-lift">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.7c0 2.1.6 4.1 1.6 5.9L0 24l6.7-1.8a11.7 11.7 0 0 0 5.4 1.4h.01c6.5 0 11.8-5.3 11.8-11.7 0-3.1-1.2-6.1-3.4-8.4z"/></svg>
+          <span data-i18n="nav.chat">Chat WhatsApp</span>
+        </a>
+
+        <!-- Mobile hamburger -->
+        <button id="mobile-menu-btn" aria-label="Menu" class="md:hidden w-10 h-10 rounded-full bg-cream border border-line-soft flex items-center justify-center text-ink-2">
+          <svg id="hamburger-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg id="close-icon" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div id="mobile-drawer" class="md:hidden hidden mt-2 bg-white border border-line-soft rounded-2xl shadow-soft overflow-hidden">
+      <div class="flex flex-col">
+        <a href="#beranda" class="mobile-link flex items-center justify-between px-5 py-4 border-b border-line-soft text-base font-bold text-ink"><span data-i18n="nav.beranda">Beranda</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#747A88" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+        <a href="#armada" class="mobile-link flex items-center justify-between px-5 py-4 border-b border-line-soft text-base font-bold text-ink"><span data-i18n="nav.armada">Armada</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#747A88" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+        <a href="#layanan" class="mobile-link flex items-center justify-between px-5 py-4 border-b border-line-soft text-base font-bold text-ink"><span data-i18n="nav.layanan">Layanan</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#747A88" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+        <a href="#tentang" class="mobile-link flex items-center justify-between px-5 py-4 border-b border-line-soft text-base font-bold text-ink"><span data-i18n="nav.tentang">Tentang</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#747A88" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+        <a href="#kontak" class="mobile-link flex items-center justify-between px-5 py-4 text-base font-bold text-ink"><span data-i18n="nav.kontak">Kontak</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#747A88" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+
+        <div class="p-4 bg-cream border-t border-line-soft flex flex-col gap-2">
+          <a href="https://wa.me/6282340715003?text=Halo,%20Saya%20Ingin%20menyewa%20mobil." target="_blank" rel="noopener noreferrer"
+             class="flex items-center justify-center gap-2 bg-wa text-white text-sm font-bold rounded-xl px-4 py-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.7c0 2.1.6 4.1 1.6 5.9L0 24l6.7-1.8a11.7 11.7 0 0 0 5.4 1.4h.01c6.5 0 11.8-5.3 11.8-11.7 0-3.1-1.2-6.1-3.4-8.4z"/></svg>
+            <span data-i18n="nav.chat">Chat WhatsApp</span>
+          </a>
+          <a href="tel:+6282340715003" class="flex items-center justify-center gap-2 bg-white border border-line-soft text-ink-2 text-sm font-bold rounded-xl px-4 py-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span class="num-tabular">+62 823-4071-5003</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ========================== HERO ========================== -->
+<section id="beranda" class="relative pt-32 sm:pt-36 pb-16 lg:pb-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative">
+    <div class="grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
+      <!-- LEFT -->
+      <div class="relative z-10">
+        <div class="eyebrow mb-5" data-i18n="hero.eyebrow">Rental Mobil · Sumbawa Barat</div>
+        <h1 class="text-[44px] sm:text-[58px] lg:text-[68px] xl:text-[74px] font-extrabold leading-[1.02] tracking-[-0.025em] text-ink" data-i18n="hero.title">
+          Sewa mobil dengan<span class="block">mudah, cepat,</span><span class="text-brand">dan terpercaya.</span>
+        </h1>
+        <p class="mt-6 max-w-[560px] text-lg text-muted leading-relaxed" data-i18n="hero.subtitle">
+          Nuansa Rinjani Rental melayani sewa mobil di Sumbawa Barat untuk kebutuhan pribadi, perjalanan bisnis, dan operasional perusahaan — harian, mingguan, atau bulanan dengan harga kompetitif.
+        </p>
+
+        <!-- Dual CTA -->
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#armada" class="btn-primary inline-flex items-center gap-2 bg-brand hover:bg-brand-700 text-white text-[15px] font-bold rounded-full px-6 py-4 shadow-lift">
+            <span data-i18n="hero.cta.primary">Pilih Mobil Anda</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://wa.me/6282340715003?text=Halo,%20Saya%20Ingin%20menyewa%20mobil." target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 bg-white hover:bg-cream text-ink text-[15px] font-bold rounded-full px-6 py-4 border border-line transition">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#22A05C"><path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.7c0 2.1.6 4.1 1.6 5.9L0 24l6.7-1.8a11.7 11.7 0 0 0 5.4 1.4h.01c6.5 0 11.8-5.3 11.8-11.7 0-3.1-1.2-6.1-3.4-8.4z"/></svg>
+            <span data-i18n="hero.cta.secondary">Chat via WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Trust strip -->
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5">
+          <div>
+            <div class="flex items-center gap-1 text-ink">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span class="ml-1 text-sm font-bold num-tabular">4.9</span>
+            </div>
+            <p class="mt-1 text-xs text-grey font-medium" data-i18n="hero.rating">Rating pelanggan</p>
+          </div>
+          <div>
+            <div class="text-xl font-extrabold text-ink num-tabular">200+</div>
+            <p class="mt-0.5 text-xs text-grey font-medium" data-i18n="hero.customers">Pelanggan terlayani</p>
+          </div>
+          <div>
+            <div class="text-xl font-extrabold text-ink">24/7</div>
+            <p class="mt-0.5 text-xs text-grey font-medium" data-i18n="hero.response">Respon WhatsApp</p>
+          </div>
+          <div>
+            <div class="text-xl font-extrabold text-ink" data-i18n="hero.driver">Driver</div>
+            <p class="mt-0.5 text-xs text-grey font-medium" data-i18n="hero.driver.sub">Tersedia (opsional)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: car + pentagon -->
+      <div class="relative lg:h-[560px] h-[360px]">
+        <div class="hero-pentagon"></div>
+        <img src="public/hilux2.png" alt="Toyota Hilux 4x4 — Nuansa Rinjani Rental" class="relative z-10 w-full h-full object-contain drop-shadow-2xl" />
+
+        <!-- Floating availability card -->
+        <div class="hidden md:flex absolute bottom-6 -left-2 lg:left-4 z-20 items-center gap-3 bg-white rounded-2xl shadow-card border border-line-soft pl-3 pr-4 py-3">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <div>
+            <div class="text-[11px] uppercase tracking-wider font-bold text-grey" data-i18n="hero.status">Status armada</div>
+            <div class="text-sm font-bold text-ink" data-i18n="hero.status.value">Tersedia hari ini</div>
+          </div>
+        </div>
+
+        <!-- Floating price tag -->
+        <div class="hidden md:flex absolute top-6 right-2 z-20 flex-col bg-white rounded-2xl shadow-card border border-line-soft px-4 py-3">
+          <div class="text-[11px] uppercase tracking-wider font-bold text-grey" data-i18n="hero.starts">Mulai dari</div>
+          <div class="text-xl font-extrabold text-ink num-tabular">Rp350<span class="text-muted">.000</span></div>
+          <div class="text-xs text-grey font-medium" data-i18n="hero.perday.allin">/ hari · all-in</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom: logo strip / context -->
+    <div class="mt-16 lg:mt-24 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 border-t border-line-soft pt-8">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-brand-50 flex items-center justify-center text-brand">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-wider font-bold text-grey" data-i18n="ctx.loc">Lokasi</p>
+          <p class="text-sm font-bold text-ink" data-i18n="ctx.loc.v">Sekongkang, Sumbawa Barat</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-brand-50 flex items-center justify-center text-brand">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-wider font-bold text-grey" data-i18n="ctx.svc">Layanan</p>
+          <p class="text-sm font-bold text-ink" data-i18n="ctx.svc.v">Harian · Mingguan · Bulanan</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-brand-50 flex items-center justify-center text-brand">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-wider font-bold text-grey" data-i18n="ctx.fleet">Armada</p>
+          <p class="text-sm font-bold text-ink" data-i18n="ctx.fleet.v">Terawat & full asuransi</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-brand-50 flex items-center justify-center text-brand">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-wider font-bold text-grey" data-i18n="ctx.conf">Konfirmasi</p>
+          <p class="text-sm font-bold text-ink" data-i18n="ctx.conf.v">Cepat via WhatsApp</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== CARA SEWA (HOW IT WORKS) ========================== -->
+<section class="relative bg-cream py-20 lg:py-24">
+  <div class="absolute inset-0 dot-grid opacity-50"></div>
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative">
+    <div class="max-w-2xl">
+      <div class="eyebrow mb-4" data-i18n="cara.eyebrow">Cara Sewa</div>
+      <h2 class="text-4xl sm:text-5xl font-extrabold tracking-[-0.02em] text-ink" data-i18n="cara.title">
+        Tiga langkah, kunci di tangan Anda.
+      </h2>
+      <p class="mt-4 text-lg text-muted" data-i18n="cara.sub">
+        Tidak perlu antri, tidak perlu paperwork rumit. Cukup pilih mobil, kabari kami via WhatsApp, dan tim kami akan menyiapkan kendaraan untuk Anda.
+      </p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-5">
+      <!-- Step 1 -->
+      <div class="relative bg-white rounded-3xl border border-line-soft p-7 shadow-soft">
+        <div class="absolute top-7 right-7 text-[64px] leading-none font-extrabold text-brand-100 select-none">01</div>
+        <div class="w-12 h-12 rounded-2xl bg-brand text-white flex items-center justify-center mb-5 relative z-10">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+        </div>
+        <h3 class="relative z-10 text-xl font-extrabold text-ink mb-2" data-i18n="cara.s1.t">Pilih mobil</h3>
+        <p class="relative z-10 text-sm text-muted leading-relaxed" data-i18n="cara.s1.b">
+          Lihat armada di bawah — Hilux, Innova, atau Avanza — dan pilih yang paling sesuai dengan rencana perjalanan Anda.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="relative bg-white rounded-3xl border border-line-soft p-7 shadow-soft">
+        <div class="absolute top-7 right-7 text-[64px] leading-none font-extrabold text-brand-100 select-none">02</div>
+        <div class="w-12 h-12 rounded-2xl bg-brand text-white flex items-center justify-center mb-5 relative z-10">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h3 class="relative z-10 text-xl font-extrabold text-ink mb-2" data-i18n="cara.s2.t">Chat WhatsApp</h3>
+        <p class="relative z-10 text-sm text-muted leading-relaxed" data-i18n="cara.s2.b">
+          Klik tombol WhatsApp, sebutkan tanggal & durasi sewa. Tim kami akan konfirmasi ketersediaan dan harga dalam hitungan menit.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="relative bg-white rounded-3xl border border-line-soft p-7 shadow-soft">
+        <div class="absolute top-7 right-7 text-[64px] leading-none font-extrabold text-brand-100 select-none">03</div>
+        <div class="w-12 h-12 rounded-2xl bg-brand text-white flex items-center justify-center mb-5 relative z-10">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3 class="relative z-10 text-xl font-extrabold text-ink mb-2" data-i18n="cara.s3.t">Ambil mobil</h3>
+        <p class="relative z-10 text-sm text-muted leading-relaxed" data-i18n="cara.s3.b">
+          Datang ke kantor kami di Sekongkang atau request pickup. Mobil siap dengan tangki penuh dan dokumen lengkap.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== ARMADA / FLEET ========================== -->
+<section id="armada" class="py-20 lg:py-28 bg-white">
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+      <div class="max-w-2xl">
+        <div class="eyebrow mb-4" data-i18n="ar.eyebrow">Armada Kami</div>
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-[-0.02em] text-ink" data-i18n="ar.title">
+          Mobil terawat untuk setiap rencana.
+        </h2>
+        <p class="mt-4 text-lg text-muted" data-i18n="ar.sub">
+          Pickup 4x4 untuk medan berat di Sumbawa, MPV nyaman untuk keluarga atau perjalanan dinas. Pilih dan pesan dalam satu langkah.
+        </p>
+      </div>
+
+      <!-- Filter chips -->
+      <div class="flex flex-wrap gap-2" role="tablist">
+        <button class="filter-chip active px-4 py-2 rounded-full bg-ink text-white text-sm font-semibold" data-i18n="ar.f.all">Semua</button>
+        <button class="filter-chip px-4 py-2 rounded-full bg-brand-100 text-ink-2 hover:bg-brand-50 text-sm font-semibold border border-line-soft" data-i18n="ar.f.4x4">Pickup 4x4</button>
+        <button class="filter-chip px-4 py-2 rounded-full bg-brand-100 text-ink-2 hover:bg-brand-50 text-sm font-semibold border border-line-soft" data-i18n="ar.f.mpv">SUV / MPV</button>
+        <button class="filter-chip px-4 py-2 rounded-full bg-brand-100 text-ink-2 hover:bg-brand-50 text-sm font-semibold border border-line-soft" data-i18n="ar.f.manual">Manual</button>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Hilux -->
+      <article class="car-card group bg-white rounded-3xl border border-line-soft shadow-card overflow-hidden flex flex-col">
+        <div class="relative bg-gradient-to-br from-brand-100 to-white aspect-[4/3] flex items-center justify-center overflow-hidden">
+          <span class="absolute top-4 left-4 chip" data-i18n="chip.hilux">4×4 · Manual</span>
+          <span class="absolute top-4 right-4 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-full px-2.5 py-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> <span data-i18n="badge.avail">Tersedia</span>
+          </span>
+          <img src="public/hilux.png" alt="Toyota Hilux" class="car-img w-[88%] h-[88%] object-contain" />
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="text-xl font-extrabold text-ink leading-tight">Toyota Hilux</h3>
+              <p class="text-sm text-grey font-medium mt-0.5" data-i18n="car.hilux.sub">Tipe G Manual 4×4 2.4L</p>
+            </div>
+            <button aria-label="Simpan" class="text-grey hover:text-brand transition shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+
+          <!-- specs -->
+          <ul class="mt-5 grid grid-cols-3 gap-2 text-center text-xs">
+            <li class="bg-cream rounded-xl py-2.5 px-2">
+              <svg class="mx-auto mb-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B616E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span class="font-bold text-ink num-tabular">5</span><span class="text-grey" data-i18n="spec.seats"> kursi</span>
+            </li>
+            <li class="bg-cream rounded-xl py-2.5 px-2">
+              <svg class="mx-auto mb-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B616E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span class="font-bold text-ink" data-i18n="spec.manual">Manual</span>
+            </li>
+            <li class="bg-cream rounded-xl py-2.5 px-2">
+              <svg class="mx-auto mb-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B616E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h12V2H3z"/><path d="M15 6h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2"/></svg>
+              <span class="font-bold text-ink" data-i18n="spec.diesel">Solar</span>
+            </li>
+          </ul>
+
+          <!-- features mini list -->
+          <ul class="mt-4 space-y-1.5 text-sm text-muted">
+            <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2B59FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="car.hilux.f1">AC dingin, audio Bluetooth</span></li>
+            <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2B59FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="car.hilux.f2">Asuransi all-risk Astra</span></li>
+            <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2B59FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="car.driver">Driver tersedia (opsional)</span></li>
+          </ul>
+
+          <!-- price + CTA -->
+          <div class="mt-6 pt-5 border-t border-line-soft">
+            <div class="flex items-baseline justify-between gap-3 mb-3">
+              <p class="text-[11px] uppercase tracking-wider font-bold text-grey shrink-0" data-i18n="lbl.from">Mulai dari</p>
+              <p class="text-xl font-extrabold text-ink num-tabular leading-none whitespace-nowrap">Rp750<span class="text-sm text-muted">.000</span><span class="text-sm font-semibold text-grey" data-i18n="lbl.perday">/hari</span></p>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="px-3 py-3 rounded-xl border border-line text-sm font-bold text-ink-2 hover:border-brand hover:text-brand transition" onclick="openDetail('hilux')"><span data-i18n="btn.detail">Detail</span></button>
+              <a href="https://wa.me/6282340715003?text=Halo,%20Saya%20Ingin%20menyewa%20Toyota%20Hilux." target="_blank" rel="noopener noreferrer"
+                 class="btn-primary inline-flex items-center justify-center gap-1.5 px-3 py-3 rounded-xl bg-brand hover:bg-brand-700 text-white text-sm font-bold shadow-lift">
+                <span data-i18n="btn.book">Pesan</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Innova -->
+      <article class="car-card group bg-white rounded-3xl border border-line-soft shadow-card overflow-hidden flex flex-col">
+        <div class="relative bg-gradient-to-br from-brand-100 to-white aspect-[4/3] flex items-center justify-center overflow-hidden">
+          <span class="absolute top-4 left-4 chip" data-i18n="chip.innova">MPV · 7 Kursi</span>
+          <span class="absolute top-4 right-4 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-full px-2.5 py-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> <span data-i18n="badge.avail">Tersedia</span>
+          </span>
+          <img src="public/innova.png" alt="Toyota Innova" class="car-img w-[88%] h-[88%] object-contain" />
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="text-xl font-extrabold text-ink leading-tight">Toyota Innova</h3>
+              <p class="text-sm text-grey font-medium mt-0.5" data-i18n="car.innova.sub">Tipe G Manual 4×2 2.4L</p>
+            </div>
+            <button aria-label="Simpan" class="text-grey hover:text-brand transition shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <ul class="mt-5 grid grid-cols-3 gap-2 text-center text-xs">
+            <li class="bg-cream rounded-xl py-2.5 px-2">
+              <svg class="mx-auto mb-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B616E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span class="font-bold text-ink num-tabular">7</span><span class="text-grey" data-i18n="spec.seats"> kursi</span>
+            </li>
+            <li class="bg-cream rounded-xl py-2.5 px-2">
+              <svg class="mx-auto mb-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B616E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span class="font-bold text-ink" data-i18n="spec.manual">Manual</span>
+            </li>
+            <li class="bg-cream rounded-xl py-2.5 px-2">
+              <svg class="mx-auto mb-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B616E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h12V2H3z"/><path d="M15 6h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2"/></svg>
+              <span class="font-bold text-ink" data-i18n="spec.diesel">Solar</span>
+            </li>
+          </ul>
+          <ul class="mt-4 space-y-1.5 text-sm text-muted">
+            <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2B59FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="car.innova.f1">Kabin luas, cocok keluarga</span></li>
+            <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2B59FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="car.innova.f2">AC double-blower</span></li>
+            <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2B59FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="car.driver">Driver tersedia (opsional)</span></li>
+          </ul>
+          <div class="mt-6 pt-5 border-t border-line-soft">
+            <div class="flex items-baseline justify-between gap-3 mb-3">
+              <p class="text-[11px] uppercase tracking-wider font-bold text-grey shrink-0" data-i18n="lbl.from">Mulai dari</p>
+              <p class="text-xl font-extrabold text-ink num-tabular leading-none whitespace-nowrap">Rp600<span class="text-sm text-muted">.000</span><span class="text-sm font-semibold text-grey" data-i18n="lbl.perday">/hari</span></p>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="px-3 py-3 rounded-xl border border-line text-sm font-bold text-ink-2 hover:border-brand hover:text-brand transition" onclick="openDetail('innova')"><span data-i18n="btn.detail">Detail</span></button>
+              <a href="https://wa.me/6282340715003?text=Halo,%20Saya%20Ingin%20menyewa%20Toyota%20Innova." target="_blank" rel="noopener noreferrer"
+                 class="btn-primary inline-flex items-center justify-center gap-1.5 px-3 py-3 rounded-xl bg-brand hover:bg-brand-700 text-white text-sm font-bold shadow-lift">
+                <span data-i18n="btn.book">Pesan</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Avanza -->
+      <article class="car-card group bg-white rounded-3xl border border-line-soft shadow-card overflow-hidden flex flex-col">
+        <div class="relative bg-gradient-to-br from-brand-100 to-white aspect-[4/3] flex items-center justify-center overflow-hidden">
+          <span class="absolute top-4 left-4 chip" data-i18n="chip.avanza">MPV · Hemat BBM</span>
+          <span class="absolute top-4 right-4 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-full px-2.5 py-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> <span data-i18n="badge.avail">Tersedia</span>
+          </span>
+          <img src="public/avanza.png" alt="Toyota Avanza" class="car-img w-[88%] h-[88%] object-contain" />
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="text-xl font-extrabold text-ink leading-tight">Toyota Avanza</h3>
+              <p class="text-sm text-grey font-medium mt-0.5" data-i18n="car.avanza.sub">Tipe G Manual 4×2 1.5L</p>
+            </div>
+            <button aria-label="Simpan" class="text-grey hover:text-brand transition shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <ul class="mt-5 grid grid-cols-3 gap-2 text-center text-xs">
+            <li class="bg-cream rounded-xl py-2.5 px-2">
+              <svg class="mx-auto mb-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B616E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span class="font-bold text-ink num-tabular">7</span><span class="text-grey" data-i18n="spec.seats"> kursi</span>
+            </li>
+            <li class="bg-cream rounded-xl py-2.5 px-2">
+              <svg class="mx-auto mb-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B616E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span class="font-bold text-ink" data-i18n="spec.manual">Manual</span>
+            </li>
+            <li class="bg-cream rounded-xl py-2.5 px-2">
+              <svg class="mx-auto mb-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B616E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h12V2H3z"/><path d="M15 6h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2"/></svg>
+              <span class="font-bold text-ink" data-i18n="spec.petrol">Bensin</span>
+            </li>
+          </ul>
+          <ul class="mt-4 space-y-1.5 text-sm text-muted">
+            <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2B59FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="car.avanza.f1">Hemat BBM, lincah</span></li>
+            <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2B59FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="car.avanza.f2">Cocok dalam kota</span></li>
+            <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2B59FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="car.driver">Driver tersedia (opsional)</span></li>
+          </ul>
+          <div class="mt-6 pt-5 border-t border-line-soft">
+            <div class="flex items-baseline justify-between gap-3 mb-3">
+              <p class="text-[11px] uppercase tracking-wider font-bold text-grey shrink-0" data-i18n="lbl.from">Mulai dari</p>
+              <p class="text-xl font-extrabold text-ink num-tabular leading-none whitespace-nowrap">Rp400<span class="text-sm text-muted">.000</span><span class="text-sm font-semibold text-grey" data-i18n="lbl.perday">/hari</span></p>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="px-3 py-3 rounded-xl border border-line text-sm font-bold text-ink-2 hover:border-brand hover:text-brand transition" onclick="openDetail('avanza')"><span data-i18n="btn.detail">Detail</span></button>
+              <a href="https://wa.me/6282340715003?text=Halo,%20Saya%20Ingin%20menyewa%20Toyota%20Avanza." target="_blank" rel="noopener noreferrer"
+                 class="btn-primary inline-flex items-center justify-center gap-1.5 px-3 py-3 rounded-xl bg-brand hover:bg-brand-700 text-white text-sm font-bold shadow-lift">
+                <span data-i18n="btn.book">Pesan</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Footer note -->
+    <p class="mt-8 text-sm text-grey text-center">
+      <span data-i18n="ar.more">Butuh tipe lain?</span> <a href="https://wa.me/6282340715003" target="_blank" rel="noopener" class="text-brand font-bold underline-offset-4 hover:underline" data-i18n="ar.more.cta">Tanya armada lewat WhatsApp →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ========================== LAYANAN / SERVICE TIERS ========================== -->
+<section id="layanan" class="py-20 lg:py-24 bg-ink text-white relative overflow-hidden">
+  <div class="absolute -top-32 -right-32 w-[480px] h-[480px] rounded-full bg-brand opacity-20 blur-3xl"></div>
+  <div class="absolute -bottom-40 -left-20 w-[420px] h-[420px] rounded-full bg-brand opacity-10 blur-3xl"></div>
+
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative">
+    <div class="max-w-2xl">
+      <div class="eyebrow mb-4" style="color:#8FA8FF"><span style="display:none"></span></div>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-7 h-px bg-brand"></span>
+        <span class="text-xs font-bold tracking-[0.16em] uppercase text-[#8FA8FF]" data-i18n="ly.eyebrow">Pilihan Paket</span>
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-extrabold tracking-[-0.02em]" data-i18n="ly.title">
+        Sewa harian, mingguan, <span class="text-[#8FA8FF]">atau bulanan.</span>
+      </h2>
+      <p class="mt-4 text-lg text-white/70" data-i18n="ly.sub">
+        Skema fleksibel — bayar sesuai kebutuhan. Semakin lama Anda sewa, semakin hemat per harinya.
+      </p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-5">
+      <!-- Harian -->
+      <div class="rounded-3xl bg-white/[0.04] border border-white/10 backdrop-blur p-7 hover:bg-white/[0.07] transition">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-bold tracking-wider uppercase text-white/60" data-i18n="ly.daily">Paket Harian</span>
+          <span class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+        </div>
+        <p class="text-3xl font-extrabold leading-none num-tabular">Rp400<span class="text-base text-white/60 font-bold">.000</span></p>
+        <p class="text-sm text-white/60 mt-1" data-i18n="ly.daily.unit">per hari · mulai dari</p>
+        <p class="mt-5 text-sm text-white/80 leading-relaxed" data-i18n="ly.daily.desc">
+          Cocok untuk perjalanan singkat, keperluan bisnis harian, atau kebutuhan mendadak.
+        </p>
+        <ul class="mt-5 space-y-2 text-sm text-white/80">
+          <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8FA8FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="ly.daily.b1">Minimum sewa 1 hari (24 jam)</span></li>
+          <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8FA8FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="ly.daily.b2">Driver opsional + Rp150.000/hari</span></li>
+          <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8FA8FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="ly.daily.b3">BBM ditanggung penyewa</span></li>
+        </ul>
+      </div>
+
+      <!-- Mingguan -->
+      <div class="relative rounded-3xl bg-brand/95 border border-brand/40 p-7 shadow-lift">
+        <span class="absolute -top-3 left-7 px-3 py-1 rounded-full bg-white text-brand text-[11px] font-extrabold tracking-wider uppercase" data-i18n="ly.popular">Paling populer</span>
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-bold tracking-wider uppercase text-white/80" data-i18n="ly.weekly">Paket Mingguan</span>
+          <span class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </span>
+        </div>
+        <p class="text-3xl font-extrabold leading-none num-tabular text-white">Rp2.500<span class="text-base text-white/70 font-bold">.000</span></p>
+        <p class="text-sm text-white/70 mt-1" data-i18n="ly.weekly.unit">/ minggu · hemat hingga 15%</p>
+        <p class="mt-5 text-sm text-white/85 leading-relaxed" data-i18n="ly.weekly.desc">
+          Ideal untuk perjalanan jangka menengah, liburan keluarga, atau survey lapangan.
+        </p>
+        <ul class="mt-5 space-y-2 text-sm text-white/85">
+          <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="ly.weekly.b1">Diskon vs sewa harian</span></li>
+          <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="ly.weekly.b2">Free ganti unit jika ada masalah</span></li>
+          <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="ly.weekly.b3">Pickup di kantor / lokasi*</span></li>
+        </ul>
+      </div>
+
+      <!-- Bulanan -->
+      <div class="rounded-3xl bg-white/[0.04] border border-white/10 backdrop-blur p-7 hover:bg-white/[0.07] transition">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-bold tracking-wider uppercase text-white/60" data-i18n="ly.monthly">Paket Bulanan</span>
+          <span class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </span>
+        </div>
+        <p class="text-3xl font-extrabold leading-none num-tabular">Rp9.000<span class="text-base text-white/60 font-bold">.000</span></p>
+        <p class="text-sm text-white/60 mt-1" data-i18n="ly.monthly.unit">/ bulan · hemat hingga 25%</p>
+        <p class="mt-5 text-sm text-white/80 leading-relaxed" data-i18n="ly.monthly.desc">
+          Solusi efisien untuk operasional perusahaan tambang, kontraktor, atau kebutuhan pribadi jangka panjang.
+        </p>
+        <ul class="mt-5 space-y-2 text-sm text-white/80">
+          <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8FA8FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="ly.monthly.b1">Invoice korporat (PT/CV)</span></li>
+          <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8FA8FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="ly.monthly.b2">Service & maintenance ditanggung</span></li>
+          <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8FA8FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="ly.monthly.b3">Termin pembayaran fleksibel</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-5 rounded-3xl border border-white/10 bg-white/[0.03] px-7 py-6">
+      <div>
+        <p class="text-lg font-bold" data-i18n="ly.corp.t">Butuh penawaran khusus untuk perusahaan?</p>
+        <p class="text-sm text-white/65 mt-0.5" data-i18n="ly.corp.b">Hubungi kami untuk kontrak korporat & long-term lease.</p>
+      </div>
+      <a href="https://wa.me/6282340715003?text=Halo,%20Saya%20Ingin%20Penawaran%20Korporat." target="_blank" rel="noopener noreferrer"
+         class="btn-primary inline-flex items-center gap-2 bg-white text-ink text-sm font-bold rounded-full px-6 py-3.5">
+        <span data-i18n="ly.corp.cta">Minta penawaran</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== TENTANG ========================== -->
+<section id="tentang" class="py-20 lg:py-28 bg-white">
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+    <div class="grid lg:grid-cols-[1fr_1.05fr] gap-12 lg:gap-16 items-center">
+      <!-- Image stack -->
+      <div class="relative">
+        <div class="relative aspect-[5/6] rounded-3xl overflow-hidden shadow-card">
+          <img src="public/tentang.jpg" alt="Serah-terima kunci mobil kepada pelanggan" class="absolute inset-0 w-full h-full object-cover" />
+          <!-- glass label -->
+          <div class="absolute bottom-5 left-5 right-5 flex items-center gap-3 bg-white/85 backdrop-blur-xl rounded-2xl px-4 py-3 border border-white/40 shadow-soft">
+            <div class="w-10 h-10 rounded-full bg-brand text-white flex items-center justify-center shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="14" r="3"/><path d="M21 14h-4l-3-3 3-3h4z"/><path d="M14 14H10"/></svg>
+            </div>
+            <div class="leading-tight">
+              <p class="text-[11px] uppercase tracking-wider font-bold text-grey" data-i18n="ab.since">Sejak 2018</p>
+              <p class="text-sm font-extrabold text-ink" data-i18n="ab.since.v">Melayani Sumbawa Barat & sekitarnya</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating mini-card -->
+        <div class="hidden lg:flex absolute -bottom-6 -right-6 flex-col bg-white border border-line-soft rounded-2xl shadow-card px-5 py-4 max-w-[220px]">
+          <div class="flex items-center gap-2 mb-1">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <span class="text-sm font-extrabold text-ink num-tabular">4.9/5.0</span>
+          </div>
+          <p class="text-xs text-grey leading-relaxed" data-i18n="ab.q">"Mobil bersih, driver ramah, harga jujur."</p>
+          <p class="mt-1 text-[11px] font-bold text-ink-2" data-i18n="ab.q.author">— Dimas, tamu Lakey 2025</p>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div>
+        <div class="eyebrow mb-4" data-i18n="ab.eyebrow">Tentang Kami</div>
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-[-0.02em] text-ink leading-[1.05]" data-i18n="ab.title">
+          Layanan rental yang <span class="text-brand">jujur, terawat, dan tepat waktu.</span>
+        </h2>
+        <p class="mt-6 text-lg text-muted leading-relaxed" data-i18n="ab.p1">
+          <strong class="text-ink">Nuansa Rinjani Rental</strong> adalah penyedia jasa sewa mobil yang memudahkan Anda menemukan kendaraan terbaik untuk setiap kebutuhan — mulai dari perjalanan pribadi, bisnis, hingga liburan keluarga.
+        </p>
+        <p class="mt-4 text-base text-muted leading-relaxed" data-i18n="ab.p2">
+          Kami berbasis di Sekongkang, Sumbawa Barat, dan melayani pelanggan dari Mataram hingga Bali, termasuk kru tambang Batu Hijau, wisatawan Lakey, dan ekspedisi Tambora.
+        </p>
+
+        <!-- Stat tiles -->
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="rounded-2xl border border-line-soft p-4">
+            <p class="text-3xl font-extrabold text-ink num-tabular leading-none">8+</p>
+            <p class="text-xs text-grey font-medium mt-1.5" data-i18n="ab.stat1">Tahun pengalaman</p>
+          </div>
+          <div class="rounded-2xl border border-line-soft p-4">
+            <p class="text-3xl font-extrabold text-ink num-tabular leading-none">3</p>
+            <p class="text-xs text-grey font-medium mt-1.5" data-i18n="ab.stat2">Jenis armada utama</p>
+          </div>
+          <div class="rounded-2xl border border-line-soft p-4">
+            <p class="text-3xl font-extrabold text-ink num-tabular leading-none">200+</p>
+            <p class="text-xs text-grey font-medium mt-1.5" data-i18n="ab.stat3">Pelanggan puas</p>
+          </div>
+          <div class="rounded-2xl border border-line-soft p-4">
+            <p class="text-3xl font-extrabold text-ink num-tabular leading-none">24/7</p>
+            <p class="text-xs text-grey font-medium mt-1.5" data-i18n="ab.stat4">Bantuan via WA</p>
+          </div>
+        </div>
+
+        <!-- Why us -->
+        <ul class="mt-10 space-y-3">
+          <li class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-brand-100 flex items-center justify-center text-brand shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <h4 class="text-base font-extrabold text-ink" data-i18n="ab.w1.t">Mobil terawat & asuransi Astra</h4>
+              <p class="text-sm text-muted mt-0.5" data-i18n="ab.w1.b">Service rutin, dokumen lengkap, asuransi all-risk untuk ketenangan perjalanan.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-brand-100 flex items-center justify-center text-brand shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 13a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg>
+            </div>
+            <div>
+              <h4 class="text-base font-extrabold text-ink" data-i18n="ab.w2.t">Harga transparan, tanpa biaya tersembunyi</h4>
+              <p class="text-sm text-muted mt-0.5" data-i18n="ab.w2.b">Apa yang Anda lihat adalah yang Anda bayar — termasuk asuransi & pajak.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-brand-100 flex items-center justify-center text-brand shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <h4 class="text-base font-extrabold text-ink" data-i18n="ab.w3.t">Tim lokal, respon menit-an</h4>
+              <p class="text-sm text-muted mt-0.5" data-i18n="ab.w3.b">WhatsApp kami dibalas cepat, dalam Bahasa Indonesia atau English.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== KONTAK / FOOTER ========================== -->
+<footer id="kontak" class="bg-cream border-t border-line-soft">
+  <!-- CTA banner -->
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-16 lg:py-20">
+    <div class="rounded-3xl bg-ink text-white p-6 sm:p-10 lg:p-14 relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-brand opacity-30 blur-3xl"></div>
+      <div class="relative grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-7 h-px bg-[#8FA8FF]"></span>
+            <span class="text-xs font-bold tracking-[0.16em] uppercase text-[#8FA8FF]" data-i18n="ft.eyebrow">Siap berangkat?</span>
+          </div>
+          <h3 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.02em] leading-[1.05] break-words" data-i18n="ft.title">
+            Hubungi kami sekarang.<br /><span class="text-[#8FA8FF]">Mobil siap, harga jujur.</span>
+          </h3>
+          <p class="mt-4 text-white/70 text-base sm:text-lg max-w-lg" data-i18n="ft.sub">
+            Tim Nuansa Rinjani Rental online setiap hari. Cek ketersediaan armada dan dapatkan konfirmasi harga dalam menit.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a href="https://wa.me/6282340715003?text=Halo,%20Saya%20Ingin%20menyewa%20mobil." target="_blank" rel="noopener noreferrer"
+             class="group flex items-center justify-between gap-3 bg-wa hover:bg-wa-700 transition rounded-2xl px-4 sm:px-5 py-4 min-w-0">
+            <div class="flex items-center gap-3 min-w-0 flex-1">
+              <span class="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.7c0 2.1.6 4.1 1.6 5.9L0 24l6.7-1.8a11.7 11.7 0 0 0 5.4 1.4h.01c6.5 0 11.8-5.3 11.8-11.7 0-3.1-1.2-6.1-3.4-8.4z"/></svg>
+              </span>
+              <div class="text-left min-w-0">
+                <p class="text-[11px] font-bold uppercase tracking-wider text-white/70">WhatsApp</p>
+                <p class="text-[13px] sm:text-base font-extrabold num-tabular truncate">+62 823-4071-5003</p>
+              </div>
+            </div>
+          </a>
+          <a href="mailto:sumbawarentalmobil@gmail.com"
+             class="group flex items-center justify-between gap-3 bg-white/10 hover:bg-white/15 transition rounded-2xl px-4 sm:px-5 py-4 min-w-0">
+            <div class="flex items-center gap-3 min-w-0 flex-1">
+              <span class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <div class="text-left min-w-0">
+                <p class="text-[11px] font-bold uppercase tracking-wider text-white/70">Email</p>
+                <p class="text-[12px] sm:text-sm font-extrabold truncate">sumbawarentalmobil@gmail.com</p>
+              </div>
+            </div>
+            
+          </a>
+          <a href="https://www.google.com/maps?q=Nuansa+Rinjani+Rental+Sekongkang" target="_blank" rel="noopener noreferrer"
+             class="group flex items-center justify-between gap-3 bg-white/10 hover:bg-white/15 transition rounded-2xl px-4 sm:px-5 py-4 min-w-0">
+            <div class="flex items-center gap-3 min-w-0 flex-1">
+              <span class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div class="text-left min-w-0">
+                <p class="text-[11px] font-bold uppercase tracking-wider text-white/70" data-i18n="ft.office">Lokasi kantor</p>
+                <p class="text-[12px] sm:text-sm font-extrabold truncate" data-i18n="ft.office.v">Sekongkang Bawah, Sumbawa Barat</p>
+              </div>
+            </div>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map + info -->
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 pb-16">
+    <div class="grid lg:grid-cols-[1fr_1.2fr] gap-10">
+      <div>
+        <img src="public/logo.png" alt="Nuansa Rinjani Rental" class="h-12 w-auto object-contain mb-6" />
+        <p class="text-sm text-muted leading-relaxed max-w-sm" data-i18n="ft.about">
+          Penyedia layanan sewa mobil di Sumbawa Barat untuk perjalanan pribadi, dinas, dan operasional perusahaan. Berbasis di Sekongkang Bawah.
+        </p>
+
+        <div class="mt-7 space-y-3">
+          <div class="flex items-start gap-3">
+            <svg class="text-brand mt-0.5 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p class="text-sm text-ink-2" data-i18n="ft.addr">
+              Jl. Lintas Sekongkang Bawah,<br />Sekongkang, Kab. Sumbawa Barat,<br />Nusa Tenggara Barat, Indonesia
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="text-brand shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <p class="text-sm text-ink-2" data-i18n="ft.hours">Senin – Minggu · 07:00 – 22:00 WITA</p>
+          </div>
+        </div>
+
+        <!-- Socials -->
+        <div class="mt-7 flex items-center gap-2">
+          <a href="https://www.instagram.com/nuansarinjanirental" target="_blank" rel="noopener" aria-label="Instagram"
+             class="w-10 h-10 rounded-xl border border-line-soft flex items-center justify-center text-ink-2 hover:text-brand hover:border-brand transition">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/nuansarinjanirental" target="_blank" rel="noopener" aria-label="Facebook"
+             class="w-10 h-10 rounded-xl border border-line-soft flex items-center justify-center text-ink-2 hover:text-brand hover:border-brand transition">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://wa.me/6282340715003" target="_blank" rel="noopener" aria-label="WhatsApp"
+             class="w-10 h-10 rounded-xl border border-line-soft flex items-center justify-center text-ink-2 hover:text-wa hover:border-wa transition">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.7c0 2.1.6 4.1 1.6 5.9L0 24l6.7-1.8a11.7 11.7 0 0 0 5.4 1.4h.01c6.5 0 11.8-5.3 11.8-11.7 0-3.1-1.2-6.1-3.4-8.4z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="rounded-3xl overflow-hidden border border-line-soft shadow-soft min-h-[300px] bg-white">
+        <iframe
+          title="Lokasi Nuansa Rinjani Rental Sekongkang Bawah"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.0723920403298!2d116.7518609!3d-8.9654771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dccf3cced3286ed%3A0x429ebeb325350a2a!2sNuansa%20Rinjani%20Rental!5e0!3m2!1sid!2sid!4v1762065484840!5m2!1sid!2sid"
+          width="100%" height="100%" style="border:0; min-height:340px;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-line-soft">
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-6 flex flex-wrap items-center justify-between gap-4 text-sm text-grey">
+      <p>© <span id="year">2026</span> Nuansa Rinjani Rental · <span data-i18n="ft.rights">All rights reserved.</span></p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-brand transition">Privacy Policy</a>
+        <a href="#" class="hover:text-brand transition">Terms & Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================== FLOATING WHATSAPP FAB ========================== -->
+<a href="https://wa.me/6282340715003?text=Halo,%20Saya%20Ingin%20menyewa%20mobil." target="_blank" rel="noopener noreferrer"
+   aria-label="Chat WhatsApp"
+   class="wa-fab fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-wa hover:bg-wa-700 transition flex items-center justify-center shadow-2xl">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.7c0 2.1.6 4.1 1.6 5.9L0 24l6.7-1.8a11.7 11.7 0 0 0 5.4 1.4h.01c6.5 0 11.8-5.3 11.8-11.7 0-3.1-1.2-6.1-3.4-8.4zM12.1 21.6h-.01a9.8 9.8 0 0 1-5-1.4l-.4-.2-4 1 1.1-3.9-.2-.4a9.8 9.8 0 0 1-1.5-5.1c0-5.4 4.4-9.8 9.9-9.8 2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.4-4.4 9.8-9.8 9.8zm5.7-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.6 0a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3a11 11 0 0 0 4.2 3.7c.6.3 1 .4 1.4.5.6.2 1.1.2 1.5.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<!-- ========================== DETAIL MODAL ========================== -->
+<div id="detail-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+  <div class="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+    <button id="detail-close" aria-label="Tutup" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/90 backdrop-blur border border-line-soft flex items-center justify-center text-ink-2 hover:text-brand transition">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <div class="bg-gradient-to-br from-brand-100 to-white aspect-[4/3] flex items-center justify-center p-6">
+      <img id="detail-img" src="public/hilux.png" alt="" class="w-[88%] h-[88%] object-contain" />
+    </div>
+
+    <div class="p-6 sm:p-7 overflow-y-auto">
+      <h3 id="detail-title" class="text-2xl font-extrabold text-ink">Toyota Hilux</h3>
+      <p id="detail-sub" class="text-sm text-grey font-medium">Tipe G Manual 4×4 2.4L</p>
+
+      <div class="mt-5 grid grid-cols-3 gap-2 text-center text-xs">
+        <div class="bg-cream rounded-xl py-3">
+          <p class="text-[10px] uppercase tracking-wider font-bold text-grey">Kursi</p>
+          <p id="detail-seats" class="text-base font-extrabold text-ink mt-1 num-tabular">5</p>
+        </div>
+        <div class="bg-cream rounded-xl py-3">
+          <p class="text-[10px] uppercase tracking-wider font-bold text-grey">Transmisi</p>
+          <p id="detail-trans" class="text-base font-extrabold text-ink mt-1">Manual</p>
+        </div>
+        <div class="bg-cream rounded-xl py-3">
+          <p class="text-[10px] uppercase tracking-wider font-bold text-grey">Bahan bakar</p>
+          <p id="detail-fuel" class="text-base font-extrabold text-ink mt-1">Solar</p>
+        </div>
+      </div>
+
+      <div class="mt-5 flex items-end justify-between border-t border-line-soft pt-5">
+        <div>
+          <p class="text-[11px] uppercase tracking-wider font-bold text-grey" data-i18n="lbl.from">Mulai dari</p>
+          <p id="detail-price" class="text-2xl font-extrabold text-ink num-tabular leading-none mt-1">Rp750<span class="text-base text-muted">.000</span><span class="text-sm font-semibold text-grey" data-i18n="lbl.perday">/hari</span></p>
+        </div>
+        <a id="detail-wa" href="https://wa.me/6282340715003" target="_blank" rel="noopener noreferrer"
+           class="btn-primary inline-flex items-center gap-2 bg-brand hover:bg-brand-700 text-white text-sm font-bold rounded-xl px-5 py-3 shadow-lift">
+          Pesan via WA
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Nav active state on scroll
+  const sections = ['beranda','armada','layanan','tentang','kontak'].map(id => ({ id, el: document.getElementById(id) }));
+  const navLinks = document.querySelectorAll('header nav a.nav-link');
+  function onScroll(){
+    const y = window.scrollY + 120;
+    let active = 'beranda';
+    sections.forEach(s => { if (s.el && s.el.offsetTop <= y) active = s.id; });
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + active));
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Filter chips (visual only)
+  document.querySelectorAll('.filter-chip').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.filter-chip').forEach(x => {
+        x.classList.remove('active','bg-ink','text-white');
+        x.classList.add('bg-brand-100','text-ink-2','border','border-line-soft');
+      });
+      b.classList.add('active','bg-ink','text-white');
+      b.classList.remove('bg-brand-100','text-ink-2','border','border-line-soft');
+    });
+  });
+
+  // Car detail modal
+  const cars = {
+    hilux:  { title: 'Toyota Hilux',  sub: 'Tipe G Manual 4×4 2.4L', img: 'public/hilux.png',  seats: 5, trans: 'Manual', fuel: 'Solar',  price: 'Rp750', whatsapp: 'Toyota%20Hilux' },
+    innova: { title: 'Toyota Innova', sub: 'Tipe G Manual 4×2 2.4L', img: 'public/innova.png', seats: 7, trans: 'Manual', fuel: 'Solar',  price: 'Rp600', whatsapp: 'Toyota%20Innova' },
+    avanza: { title: 'Toyota Avanza', sub: 'Tipe G Manual 4×2 1.5L', img: 'public/avanza.png', seats: 7, trans: 'Manual', fuel: 'Bensin', price: 'Rp400', whatsapp: 'Toyota%20Avanza' },
+  };
+  const modal = document.getElementById('detail-modal');
+  function openDetail(key){
+    const c = cars[key]; if (!c) return;
+    document.getElementById('detail-title').textContent = c.title;
+    document.getElementById('detail-sub').textContent = c.sub;
+    document.getElementById('detail-img').src = c.img;
+    document.getElementById('detail-img').alt = c.title;
+    document.getElementById('detail-seats').textContent = c.seats;
+    document.getElementById('detail-trans').textContent = c.trans;
+    document.getElementById('detail-fuel').textContent = c.fuel;
+    document.getElementById('detail-price').innerHTML = c.price + '<span class="text-base text-muted">.000</span><span class="text-sm font-semibold text-grey" data-i18n="lbl.perday">/hari</span>';
+    document.getElementById('detail-wa').href = `https://wa.me/6282340715003?text=Halo,%20Saya%20Ingin%20menyewa%20${c.whatsapp}.`;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDetail(){
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('detail-close').addEventListener('click', closeDetail);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeDetail(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDetail(); });
+  window.openDetail = openDetail;
+
+  // Smooth scroll for in-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      window.scrollTo({ top: target.offsetTop - 88, behavior: 'smooth' });
+    });
+  });
+
+  // ============================================================
+  // i18n — Indonesian / English
+  // ============================================================
+  const i18n = {
+    en: {
+      // Nav
+      'nav.beranda': 'Home',
+      'nav.armada': 'Fleet',
+      'nav.layanan': 'Services',
+      'nav.tentang': 'About',
+      'nav.kontak': 'Contact',
+      'nav.chat': 'Chat WhatsApp',
+
+      // Hero
+      'hero.eyebrow': 'Car Rental · West Sumbawa',
+      'hero.title': 'Rent a car with<span class="block">ease, speed,</span><span class="text-brand">and trust.</span>',
+      'hero.subtitle': 'Nuansa Rinjani Rental serves car hire in West Sumbawa for personal trips, business travel, and corporate operations — daily, weekly, or monthly at fair prices.',
+      'hero.cta.primary': 'Choose Your Car',
+      'hero.cta.secondary': 'Chat via WhatsApp',
+      'hero.rating': 'Customer rating',
+      'hero.customers': 'Customers served',
+      'hero.response': 'WhatsApp response',
+      'hero.driver': 'Driver',
+      'hero.driver.sub': 'Available (optional)',
+      'hero.status': 'Fleet status',
+      'hero.status.value': 'Available today',
+      'hero.starts': 'Starting from',
+      'hero.perday.allin': '/ day · all-in',
+
+      'ctx.loc': 'Location',
+      'ctx.loc.v': 'Sekongkang, West Sumbawa',
+      'ctx.svc': 'Service',
+      'ctx.svc.v': 'Daily · Weekly · Monthly',
+      'ctx.fleet': 'Fleet',
+      'ctx.fleet.v': 'Well-maintained & fully insured',
+      'ctx.conf': 'Confirmation',
+      'ctx.conf.v': 'Fast via WhatsApp',
+
+      // Cara Sewa
+      'cara.eyebrow': 'How to Rent',
+      'cara.title': 'Three steps, keys in hand.',
+      'cara.sub': 'No queues, no complicated paperwork. Just pick a car, message us on WhatsApp, and our team will have the vehicle ready for you.',
+      'cara.s1.t': 'Pick a car',
+      'cara.s1.b': 'Browse our fleet below — Hilux, Innova, or Avanza — and pick the one that best fits your travel plans.',
+      'cara.s2.t': 'Chat WhatsApp',
+      'cara.s2.b': 'Tap the WhatsApp button and tell us your dates & duration. Our team confirms availability and pricing in minutes.',
+      'cara.s3.t': 'Pick up the car',
+      'cara.s3.b': 'Come to our Sekongkang office or request a pickup. Your car is ready with a full tank and complete papers.',
+
+      // Armada
+      'ar.eyebrow': 'Our Fleet',
+      'ar.title': 'Well-kept cars for every plan.',
+      'ar.sub': '4×4 pickups for rough Sumbawa roads, comfortable MPVs for family or business trips. Choose and book in one step.',
+      'ar.f.all': 'All',
+      'ar.f.4x4': '4×4 Pickup',
+      'ar.f.mpv': 'SUV / MPV',
+      'ar.f.manual': 'Manual',
+      'ar.more': 'Need another model?',
+      'ar.more.cta': 'Ask via WhatsApp →',
+
+      // Car chips
+      'chip.hilux': '4×4 · Manual',
+      'chip.innova': 'MPV · 7 Seats',
+      'chip.avanza': 'MPV · Fuel Efficient',
+      'badge.avail': 'Available',
+
+      // Car subs
+      'car.hilux.sub': 'G Manual 4×4 2.4L',
+      'car.innova.sub': 'G Manual 4×2 2.4L',
+      'car.avanza.sub': 'G Manual 4×2 1.5L',
+
+      // Car features
+      'car.hilux.f1': 'Cold A/C, Bluetooth audio',
+      'car.hilux.f2': 'All-risk Astra insurance',
+      'car.innova.f1': 'Spacious cabin, family-friendly',
+      'car.innova.f2': 'Double-blower A/C',
+      'car.avanza.f1': 'Fuel-efficient, nimble',
+      'car.avanza.f2': 'Great for city driving',
+      'car.driver': 'Driver available (optional)',
+
+      // Labels
+      'lbl.from': 'Starting from',
+      'lbl.perday': '/day',
+      'spec.seats': ' seats',
+      'spec.manual': 'Manual',
+      'spec.diesel': 'Diesel',
+      'spec.petrol': 'Petrol',
+      'btn.detail': 'Details',
+      'btn.book': 'Book',
+
+      // Layanan
+      'ly.eyebrow': 'Service Packages',
+      'ly.title': 'Daily, weekly, <span class="text-[#8FA8FF]">or monthly.</span>',
+      'ly.sub': 'Flexible plans — pay for what you need. The longer you rent, the more you save per day.',
+      'ly.daily': 'Daily Plan',
+      'ly.daily.unit': 'per day · starting from',
+      'ly.daily.desc': 'Best for short trips, daily business needs, or last-minute plans.',
+      'ly.daily.b1': 'Minimum 1 day (24 hours)',
+      'ly.daily.b2': 'Optional driver + Rp150,000/day',
+      'ly.daily.b3': 'Fuel paid by renter',
+      'ly.popular': 'Most Popular',
+      'ly.weekly': 'Weekly Plan',
+      'ly.weekly.unit': '/ week · save up to 15%',
+      'ly.weekly.desc': 'Ideal for medium-length trips, family holidays, or field surveys.',
+      'ly.weekly.b1': 'Discount vs. daily rate',
+      'ly.weekly.b2': 'Free unit replacement on issues',
+      'ly.weekly.b3': 'Pickup at office / location*',
+      'ly.monthly': 'Monthly Plan',
+      'ly.monthly.unit': '/ month · save up to 25%',
+      'ly.monthly.desc': 'Efficient for mining ops, contractors, or long-term personal use.',
+      'ly.monthly.b1': 'Corporate invoice (PT / CV)',
+      'ly.monthly.b2': 'Service & maintenance covered',
+      'ly.monthly.b3': 'Flexible payment terms',
+      'ly.corp.t': 'Need a custom quote for your company?',
+      'ly.corp.b': 'Get in touch for corporate contracts & long-term lease.',
+      'ly.corp.cta': 'Request a quote',
+
+      // Tentang
+      'ab.eyebrow': 'About Us',
+      'ab.since': 'Since 2018',
+      'ab.since.v': 'Serving West Sumbawa & beyond',
+      'ab.q': '"Clean car, friendly driver, honest price."',
+      'ab.q.author': '— Dimas, Lakey guest 2025',
+      'ab.title': 'A rental service that\'s <span class="text-brand">honest, well-kept, and on time.</span>',
+      'ab.p1': '<strong class="text-ink">Nuansa Rinjani Rental</strong> is a car-hire provider that makes it easy to find the right vehicle for every occasion — from personal trips and business travel to family holidays.',
+      'ab.p2': 'We\'re based in Sekongkang, West Sumbawa, and serve customers from Mataram to Bali — including Batu Hijau mining crews, Lakey surf travellers, and Tambora expeditions.',
+      'ab.stat1': 'Years of experience',
+      'ab.stat2': 'Main vehicle types',
+      'ab.stat3': 'Happy customers',
+      'ab.stat4': 'WhatsApp support',
+      'ab.w1.t': 'Well-kept cars & Astra insurance',
+      'ab.w1.b': 'Regular servicing, complete papers, all-risk coverage for peace of mind.',
+      'ab.w2.t': 'Transparent pricing, no hidden fees',
+      'ab.w2.b': 'What you see is what you pay — including insurance & taxes.',
+      'ab.w3.t': 'Local team, replies in minutes',
+      'ab.w3.b': 'Our WhatsApp is answered quickly, in Indonesian or English.',
+
+      // Kontak
+      'ft.eyebrow': 'Ready to roll?',
+      'ft.title': 'Get in touch now.<br /><span class="text-[#8FA8FF]">Cars ready, honest price.</span>',
+      'ft.sub': 'The Nuansa Rinjani Rental team is online every day. Check availability and get pricing confirmed in minutes.',
+      'ft.office': 'Office location',
+      'ft.office.v': 'Sekongkang Bawah, West Sumbawa',
+      'ft.about': 'Car rental service in West Sumbawa for personal trips, business travel, and corporate operations. Based in Sekongkang Bawah.',
+      'ft.addr': 'Jl. Lintas Sekongkang Bawah,<br />Sekongkang, West Sumbawa Regency,<br />West Nusa Tenggara, Indonesia',
+      'ft.hours': 'Mon – Sun · 07:00 – 22:00 WITA',
+      'ft.rights': 'All rights reserved.',
+    },
+  };
+
+  // Capture all original ID text on load
+  const idDict = {};
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    idDict[el.dataset.i18n] = el.innerHTML;
+  });
+
+  function applyLang(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.dataset.i18n;
+      if (lang === 'id') {
+        if (idDict[k] !== undefined) el.innerHTML = idDict[k];
+      } else {
+        if (i18n.en[k] !== undefined) el.innerHTML = i18n.en[k];
+        else if (idDict[k] !== undefined) el.innerHTML = idDict[k];
+      }
+    });
+    // Toggle button styles
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      const active = b.dataset.lang === lang;
+      b.classList.toggle('bg-brand', active);
+      b.classList.toggle('text-white', active);
+      b.classList.toggle('shadow-soft', active);
+      b.classList.toggle('text-ink-2', !active);
+      b.classList.toggle('opacity-60', !active);
+    });
+    const mob = document.getElementById('lang-mobile');
+    if (mob) mob.textContent = lang.toUpperCase();
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('nrr.lang', lang); } catch(_) {}
+  }
+
+  // Wire toggle buttons
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.addEventListener('click', () => applyLang(b.dataset.lang));
+  });
+  document.getElementById('lang-mobile')?.addEventListener('click', () => {
+    const cur = (localStorage.getItem('nrr.lang') || 'id');
+    applyLang(cur === 'id' ? 'en' : 'id');
+  });
+
+  // Initial language
+  let initialLang = 'id';
+  try { initialLang = localStorage.getItem('nrr.lang') || 'id'; } catch(_) {}
+  applyLang(initialLang);
+
+  // ============================================================
+  // Mobile drawer
+  // ============================================================
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const drawer = document.getElementById('mobile-drawer');
+  const hamb = document.getElementById('hamburger-icon');
+  const xIcon = document.getElementById('close-icon');
+  function toggleDrawer(force) {
+    const open = force !== undefined ? force : drawer.classList.contains('hidden');
+    drawer.classList.toggle('hidden', !open);
+    hamb.classList.toggle('hidden', open);
+    xIcon.classList.toggle('hidden', !open);
+  }
+  menuBtn?.addEventListener('click', () => toggleDrawer());
+  // Close drawer when a mobile link is tapped (smooth-scroll handler runs after)
+  document.querySelectorAll('.mobile-link').forEach(a => {
+    a.addEventListener('click', () => toggleDrawer(false));
+  });
+</script>
+</body>
+</html>
