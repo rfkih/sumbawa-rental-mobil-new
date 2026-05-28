@@ -73,7 +73,7 @@ const cars: Car[] = [
     image: "/avanza.png",
     badge: "SUV MPV",
     category: "mpv",
-    price: "Rp400.000",
+    price: "Rp450.000",
     priceNote: "/hari",
     seats: "7 Kursi",
     transmission: "Manual",

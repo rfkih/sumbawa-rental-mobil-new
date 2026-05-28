@@ -40,7 +40,7 @@ const tiers = [
     desc: "Solusi efisien untuk operasional perusahaan atau jangka panjang.",
     price: "Rp300.000",
     unit: "/ hari",
-    items
+    items: [
       "Minimum 30 hari",
       "Harga paling hemat",
       "AC & full service",
