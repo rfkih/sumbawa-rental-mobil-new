@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Footer, NavBar } from "@components";
+import { LangProvider } from "@/context/LangContext";
 import Script from "next/script";
 
 const SITE_URL = "https://www.nuansarinjanirental.com";
@@ -178,9 +179,11 @@ export default function RootLayout({
         />
       </head>
       <body className="relative text-ink font-sans antialiased">
-        <NavBar />
-        {children}
-        <Footer />
+        <LangProvider>
+          <NavBar />
+          {children}
+          <Footer />
+        </LangProvider>
       </body>
     </html>
   );
