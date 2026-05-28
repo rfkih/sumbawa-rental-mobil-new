@@ -1,44 +1,4 @@
 import { Hero, CaraSewa, Fleet, Layanan, AboutSections, WhatsAppFAB } from "@components";
-import Script from "next/script";
-
-export const metadata = {
-  metadataBase: new URL("http://www.nuansarinjanirental.com/"),
-  title: "Nuansa Rinjani Rental | Sewa Mobil Sumbawa Barat",
-  description:
-    "Sewa mobil di Sumbawa Barat dengan mudah, cepat, dan terpercaya. Layanan harian, mingguan, dan bulanan untuk kebutuhan pribadi, bisnis, dan perusahaan.",
-  keywords: [
-    "rental mobil sumbawa barat",
-    "sewa mobil sekongkang",
-    "rental mobil di sumbawa",
-    "car hire sumbawa",
-    "rental innova sumbawa",
-    "rental avanza sumbawa",
-    "rental hilux sumbawa",
-    "rental innova sekongkang",
-    "rental avanza sekongkang",
-    "rental hilux sekongkang",
-    "rental mobil bulanan sumbawa",
-    "rental mobil harian sumbawa",
-    "rental mobil di sekongkang",
-  ],
-  openGraph: {
-    title: "Nuansa Rinjani Rental",
-    description:
-      "Layanan rental mobil di Sumbawa Barat untuk kebutuhan pribadi, bisnis, dan operasional perusahaan Anda.",
-    url: "http://www.nuansarinjanirental.com/",
-    siteName: "Nuansa Rinjani Rental",
-    images: [
-      {
-        url: "/hilux.png",
-        width: 1200,
-        height: 630,
-        alt: "Toyota Hilux putih - Nuansa Rinjani Rental",
-      },
-    ],
-    locale: "id_ID",
-    type: "website",
-  },
-};
 
 export default function Home() {
   return (
@@ -49,32 +9,6 @@ export default function Home() {
       <Layanan />
       <AboutSections />
       <WhatsAppFAB />
-      <Script
-        id="car-rental-schema"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CarRental",
-            name: "Nuansa Rinjani Rental",
-            image: "http://www.nuansarinjanirental.com/hilux2.png",
-            description:
-              "Sewa mobil di Sumbawa Barat dengan mudah, cepat, dan terpercaya. Tersedia layanan harian, mingguan, dan bulanan.",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Jl. Lintas Sekongkang Bawah",
-              addressLocality: "Sekongkang",
-              addressRegion: "Nusa Tenggara Barat",
-              postalCode: "84457",
-              addressCountry: "ID",
-            },
-            telephone: "+62-823-4071-5003",
-            url: "http://www.nuansarinjanirental.com/",
-            priceRange: "Rp450.000 - Rp750.000 per hari",
-          }),
-        }}
-      />
     </main>
   );
 }
